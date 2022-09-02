@@ -3,7 +3,7 @@ from unittest.mock import patch
 
 
 path = './hello.txt'
-path_w = 'D:/v-sync/Development/hello2.txt'
+path_w = './hello2.txt'
 
 with open(path) as f:
   s = f.read()
