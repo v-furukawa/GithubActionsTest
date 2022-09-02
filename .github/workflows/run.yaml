@@ -12,6 +12,10 @@ jobs:
           labels=github.event.pull_request.labels.*.name
           echo '::set-output name=lavel::${labels}'
       - name: Step2
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Step3
         run: |   
           echo ${{steps.set-value.outputs.label}} >> hello.txt
           git config user.name github-actions
