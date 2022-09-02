@@ -1,0 +1,25 @@
+name: learn-github-actions
+on:
+  pull_request:
+    types: [opened]
+jobs:
+  add_text:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+      - name: Get Python version
+        run: python -V
+      - name: Run Python
+        run: python test.py
+      - name: Push File
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
