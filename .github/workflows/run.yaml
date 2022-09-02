@@ -4,4 +4,4 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "print('this is a pen.')" > test.txt
+      - run: echo "this is a pen." >> test.txt
