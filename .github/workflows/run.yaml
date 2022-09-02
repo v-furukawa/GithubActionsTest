@@ -6,20 +6,13 @@ jobs:
   add_text:
     runs-on: ubuntu-latest
     steps:
-      - name: Step1
-        id: set-value
-        run: |
-          labels=github.event.pull_request.labels.*.name
-          echo '::set-output name=lavel::${labels}'
-      - name: Step2
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      - name: Step3
-        run: |   
-          echo ${{steps.set-value.outputs.label}} >> hello.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push
+          python-version: '3.8'
+          architecture: 'x64'
+      - name: Get Python version
+        run: python -V
+      - name: Run Python
+        run: python test.py
