@@ -1,7 +1,7 @@
 name: learn-github-actions
 on:
   pull_request:
-    types: [opened]
+    types: [closed]
 jobs:
   add_text:
     runs-on: ubuntu-latest
@@ -22,4 +22,4 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "generated"
-          git push origin HEAD
+          git push
