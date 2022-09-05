@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: develop
+          ref: ${{github.head_ref}}
       - name: Check head
         run: git reflog
       - name: Setup Python
