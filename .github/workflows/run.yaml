@@ -1,7 +1,7 @@
 name: learn-github-actions
 on:
   pull_request:
-    types: [opened]
+    types: [closed]
 jobs:
   add_text:
     runs-on: ubuntu-latest
