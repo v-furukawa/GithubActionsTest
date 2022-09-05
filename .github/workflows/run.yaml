@@ -11,4 +11,4 @@ jobs:
       - name: Push File
         run: |
           TEST=$(<version.txt)
-          echo "$TEST"
+          echo "$((TEST+1))"
