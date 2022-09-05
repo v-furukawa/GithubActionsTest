@@ -9,4 +9,6 @@ jobs:
         # with:
         #   ref: develop
       - name: Push File
-        run: ls
+        run: |
+          TEST=$(<version.txt)
+          echo "$TEST"
