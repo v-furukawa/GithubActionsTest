@@ -9,14 +9,4 @@ jobs:
         # with:
         #   ref: develop
       - name: Push File
-        run: |
-          VERSION='cat version.txt'
-          echo "$VERSION"
-          a=1
-          echo "$((VERSION+a))" | bc
-          echo "$((VERSION+a))" | bc >> version.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push origin develop
+        run: ls
