@@ -6,6 +6,11 @@ jobs:
   add_text:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Check head
+        run: git reflog
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
