@@ -10,5 +10,5 @@ jobs:
         #   ref: develop
       - name: Push File
         run: |
-          TEST=$(<version.txt)
-          echo "$((TEST+1))"
+          VERSION=$(<version.txt)
+          echo "$((VERSION+1))" >> version.txt
