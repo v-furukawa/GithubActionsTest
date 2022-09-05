@@ -6,7 +6,6 @@ jobs:
   add_text:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
